@@ -1,0 +1,256 @@
+{
+  "generatedAt": "2026-03-06T15:56:53.701Z",
+  "database": "server/data/healthpulse.db",
+  "tables": [
+    {
+      "table": "appointments",
+      "rowCount": 1,
+      "sampleRows": [
+        {
+          "id": 1,
+          "user_id": 3,
+          "title": "Cardiology follow-up",
+          "doctor": "Dr. Iqbal",
+          "date": "2026-03-08T15:53:05.335Z",
+          "type": "In-person",
+          "created_at": "2026-03-06T15:53:05.341Z",
+          "specialty": "Cardiology"
+        }
+      ]
+    },
+    {
+      "table": "diabetes_logs",
+      "rowCount": 1,
+      "sampleRows": [
+        {
+          "id": 1,
+          "user_id": 3,
+          "patient_id": 1,
+          "timestamp": "2026-03-06T15:53:05.346Z",
+          "glucose": 118,
+          "meal_tag": "Fasting",
+          "insulin_units": null,
+          "notes": "smoke test",
+          "created_at": "2026-03-06T15:53:05.348Z"
+        }
+      ]
+    },
+    {
+      "table": "habits",
+      "rowCount": 1,
+      "sampleRows": [
+        {
+          "id": 1,
+          "user_id": 3,
+          "date_key": "2026-03-06",
+          "values_json": "{\"walk_30\":false,\"bp_check\":true}",
+          "created_at": "2026-03-06T15:53:05.353Z",
+          "updated_at": "2026-03-06T15:53:05.353Z"
+        }
+      ]
+    },
+    {
+      "table": "medications",
+      "rowCount": 1,
+      "sampleRows": [
+        {
+          "id": 1,
+          "user_id": 3,
+          "name": "Amlodipine",
+          "dosage": "5 mg",
+          "time": "08:00",
+          "frequency": "Daily",
+          "taken_date": null,
+          "created_at": "2026-03-06T15:53:05.331Z"
+        }
+      ]
+    },
+    {
+      "table": "patients",
+      "rowCount": 1,
+      "sampleRows": [
+        {
+          "id": 1,
+          "user_id": 3,
+          "name": "Patient One",
+          "age": 41,
+          "condition": "Hypertension",
+          "notes": "follow-up",
+          "created_at": "2026-03-06T15:53:05.326Z"
+        }
+      ]
+    },
+    {
+      "table": "risk_results",
+      "rowCount": 12,
+      "sampleRows": [
+        {
+          "id": 12,
+          "user_id": 3,
+          "score": 32,
+          "label": "Moderate",
+          "summary": "Connectivity smoke test",
+          "factors_json": "[\"bp\"]",
+          "input_json": "{}",
+          "created_at": "2026-03-06T15:53:05.315Z"
+        },
+        {
+          "id": 11,
+          "user_id": 1,
+          "score": 10,
+          "label": "Low risk",
+          "summary": "Current profile appears favorable. Continue prevention-focused habits.",
+          "factors_json": "[{\"name\":\"Age\",\"detail\":\"45-54 adds 3 points\"},{\"name\":\"Sex\",\"detail\":\"Male baseline adds 2 points\"},{\"name\":\"Systolic BP\",\"detail\":\"130-139 mmHg adds 3 points\"},{\"name\":\"LDL\",\"detail\":\"LDL 130-159 adds 2 points\"},{\"name\":\"Activity\",\"detail\":\"High activity subtracts 1 point\"},{\"name\":\"BMI\",\"detail\":\"BMI 25-29.9 adds 1 point\"}]",
+          "input_json": "{\"age\":45,\"sex\":\"male\",\"smoker\":\"no\",\"diabetes\":\"no\",\"familyHistory\":\"no\",\"sys\":132,\"ldl\":145,\"hdl\":48,\"bmi\":27.4,\"activity\":\"high\"}",
+          "created_at": "2026-03-06T15:50:59.608Z"
+        },
+        {
+          "id": 10,
+          "user_id": 1,
+          "score": 10,
+          "label": "Low risk",
+          "summary": "Current profile appears favorable. Continue prevention-focused habits.",
+          "factors_json": "[{\"name\":\"Age\",\"detail\":\"45-54 adds 3 points\"},{\"name\":\"Sex\",\"detail\":\"Male baseline adds 2 points\"},{\"name\":\"Systolic BP\",\"detail\":\"130-139 mmHg adds 3 points\"},{\"name\":\"LDL\",\"detail\":\"LDL 130-159 adds 2 points\"},{\"name\":\"Activity\",\"detail\":\"High activity subtracts 1 point\"},{\"name\":\"BMI\",\"detail\":\"BMI 25-29.9 adds 1 point\"}]",
+          "input_json": "{\"age\":45,\"sex\":\"male\",\"smoker\":\"no\",\"diabetes\":\"no\",\"familyHistory\":\"no\",\"sys\":132,\"ldl\":145,\"hdl\":48,\"bmi\":27.4,\"activity\":\"high\"}",
+          "created_at": "2026-03-06T15:50:31.282Z"
+        },
+        {
+          "id": 9,
+          "user_id": 1,
+          "score": 10,
+          "label": "Low risk",
+          "summary": "Current profile appears favorable. Continue prevention-focused habits.",
+          "factors_json": "[{\"name\":\"Age\",\"detail\":\"45-54 adds 3 points\"},{\"name\":\"Sex\",\"detail\":\"Male baseline adds 2 points\"},{\"name\":\"Systolic BP\",\"detail\":\"130-139 mmHg adds 3 points\"},{\"name\":\"LDL\",\"detail\":\"LDL 130-159 adds 2 points\"},{\"name\":\"Activity\",\"detail\":\"High activity subtracts 1 point\"},{\"name\":\"BMI\",\"detail\":\"BMI 25-29.9 adds 1 point\"}]",
+          "input_json": "{\"age\":45,\"sex\":\"male\",\"smoker\":\"no\",\"diabetes\":\"no\",\"familyHistory\":\"no\",\"sys\":132,\"ldl\":145,\"hdl\":48,\"bmi\":27.4,\"activity\":\"high\"}",
+          "created_at": "2026-03-06T15:43:00.559Z"
+        },
+        {
+          "id": 8,
+          "user_id": 1,
+          "score": 10,
+          "label": "Low risk",
+          "summary": "Current profile appears favorable. Continue prevention-focused habits.",
+          "factors_json": "[{\"name\":\"Age\",\"detail\":\"45-54 adds 3 points\"},{\"name\":\"Sex\",\"detail\":\"Male baseline adds 2 points\"},{\"name\":\"Systolic BP\",\"detail\":\"130-139 mmHg adds 3 points\"},{\"name\":\"LDL\",\"detail\":\"LDL 130-159 adds 2 points\"},{\"name\":\"Activity\",\"detail\":\"High activity subtracts 1 point\"},{\"name\":\"BMI\",\"detail\":\"BMI 25-29.9 adds 1 point\"}]",
+          "input_json": "{\"age\":45,\"sex\":\"male\",\"smoker\":\"no\",\"diabetes\":\"no\",\"familyHistory\":\"no\",\"sys\":132,\"ldl\":145,\"hdl\":48,\"bmi\":27.4,\"activity\":\"high\"}",
+          "created_at": "2026-03-06T15:21:39.659Z"
+        }
+      ]
+    },
+    {
+      "table": "sessions",
+      "rowCount": 6,
+      "sampleRows": [
+        {
+          "id": 9,
+          "user_id": 4,
+          "token": "81c653e2b16c2270b0c67712a2b7ae5e6248a4a6f4f4f57814bbab4f013f7b42",
+          "expires_at": "2026-04-05T15:53:28.288Z",
+          "created_at": "2026-03-06T15:53:28.288Z"
+        },
+        {
+          "id": 8,
+          "user_id": 3,
+          "token": "a90d11e2e53b882dccd723d2268f07a763eb6a7cbef25b1c12b2fe6ed57a40d5",
+          "expires_at": "2026-04-05T15:53:05.298Z",
+          "created_at": "2026-03-06T15:53:05.298Z"
+        },
+        {
+          "id": 7,
+          "user_id": 1,
+          "token": "cb28a057e6fa0574d7a61f6cea6a612b7f8c4652713a774bd130255d26f0f28a",
+          "expires_at": "2026-04-05T15:42:55.974Z",
+          "created_at": "2026-03-06T15:42:55.974Z"
+        },
+        {
+          "id": 6,
+          "user_id": 2,
+          "token": "fb662b98b4d70185753a182cdc3c9f91840578b614f6c0bdbe70d0a899557548",
+          "expires_at": "2026-04-05T15:23:05.300Z",
+          "created_at": "2026-03-06T15:23:05.300Z"
+        },
+        {
+          "id": 5,
+          "user_id": 1,
+          "token": "2a1d7853fdf9e98684b9eb985db13f0031924d35e76d5f658219a736ed0871ea",
+          "expires_at": "2026-04-05T14:58:19.137Z",
+          "created_at": "2026-03-06T14:58:19.137Z"
+        }
+      ]
+    },
+    {
+      "table": "symptom_logs",
+      "rowCount": 2,
+      "sampleRows": [
+        {
+          "id": 2,
+          "user_id": 4,
+          "level": "Monitor",
+          "score": 1,
+          "summary": "test",
+          "created_at": "2026-03-06T15:53:28.316Z"
+        },
+        {
+          "id": 1,
+          "user_id": 3,
+          "level": "Mild",
+          "score": 2,
+          "summary": "No acute symptoms",
+          "created_at": "2026-03-06T15:53:05.321Z"
+        }
+      ]
+    },
+    {
+      "table": "users",
+      "rowCount": 4,
+      "sampleRows": [
+        {
+          "id": 4,
+          "name": "Full Check",
+          "email": "fullcheck_71ea7290@example.com",
+          "password_hash": "5d6438b89e89db6cea9c086791216191:cab4df67a361cd9cb66527efe4f22d0b952483660f4bc5d4296151dd81dc658119e05e3845b45f8e544459cec76b8dfa7d0a88be6acae26411c8630ad8b4f9b8",
+          "created_at": "2026-03-06T15:53:28.247Z"
+        },
+        {
+          "id": 3,
+          "name": "Conn Check",
+          "email": "conn_6a1120e1@example.com",
+          "password_hash": "9d37e5c08efc228c660d9911fc85d7a3:d614b0f1b822dc29fe676543cebbbdd7961250bd5d83619b8ac43f19e8c04fa2a9327fae4ad9507394fdc4ec2244b551d4680cb955229bcdca138e479080e670",
+          "created_at": "2026-03-06T15:53:05.258Z"
+        },
+        {
+          "id": 2,
+          "name": "Diag User",
+          "email": "diag_217fb138@example.com",
+          "password_hash": "d3a6f1e57961c9b1cad6d13955ef4549:d05f3164ff2604a63c18e64b0ead793ecec9290c69b40c85829f5b6800a53d5e405c49b8610f67e3617879c8a5f179066e80e90227d0612e96fe9df1c57f447f",
+          "created_at": "2026-03-06T15:23:05.260Z"
+        },
+        {
+          "id": 1,
+          "name": "admin",
+          "email": "admin@gmail.com",
+          "password_hash": "1b6b9a1c9a57f8b155dbdcdbe763f331:30fdda2711991b8d750224220a81df28d5d3751512463c8204e6461aaa941f0a962efe103e67db6b25b7f8862b5db422cf13817767d4561fa642ad8a8fe78c09",
+          "created_at": "2026-03-06T14:33:13.101Z"
+        }
+      ]
+    },
+    {
+      "table": "vitals",
+      "rowCount": 1,
+      "sampleRows": [
+        {
+          "id": 1,
+          "user_id": 3,
+          "timestamp": "2026-03-06T15:53:05.303Z",
+          "hr": 78,
+          "sys": 124,
+          "dia": 80,
+          "oxygen": 98,
+          "glucose": 105,
+          "steps": 5500,
+          "notes": "connectivity test",
+          "created_at": "2026-03-06T15:53:05.306Z"
+        }
+      ]
+    }
+  ]
+}

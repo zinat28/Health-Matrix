@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEALTH MATRIX | Login</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body data-page="login">
+    <main class="auth-page">
+      <section class="auth-card">
+        <div class="brand-row">
+          <span class="brand-mark"></span>
+          <h1>HEALTH MATRIX</h1>
+        </div>
+        <p class="auth-subtitle">Login to your account or create a new one.</p>
+
+        <div class="auth-tabs">
+          <button id="showLogin" class="auth-tab active" type="button">Login</button>
+          <button id="showRegister" class="auth-tab" type="button">Create Account</button>
+        </div>
+
+        <form id="loginForm" class="auth-form" autocomplete="off">
+          <label class="label" for="loginEmail">Email</label>
+          <input class="input" id="loginEmail" name="email" type="email" required />
+
+          <label class="label" for="loginPassword">Password</label>
+          <input class="input" id="loginPassword" name="password" type="password" required />
+
+          <button class="btn btn-primary auth-submit" type="submit">Login</button>
+        </form>
+
+        <form id="registerForm" class="auth-form hidden" autocomplete="off">
+          <label class="label" for="registerName">Full Name</label>
+          <input class="input" id="registerName" name="name" type="text" required />
+
+          <label class="label" for="registerEmail">Email</label>
+          <input class="input" id="registerEmail" name="email" type="email" required />
+
+          <label class="label" for="registerPassword">Password</label>
+          <input class="input" id="registerPassword" name="password" type="password" minlength="6" required />
+
+          <label class="label" for="confirmPassword">Confirm Password</label>
+          <input class="input" id="confirmPassword" name="confirmPassword" type="password" minlength="6" required />
+
+          <button class="btn btn-primary auth-submit" type="submit">Create Account</button>
+        </form>
+
+        <p id="authMessage" class="auth-message"></p>
+      </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

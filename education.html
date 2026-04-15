@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEALTH MATRIX | Education Center</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/education.css" />
+  </head>
+  <body data-page="education">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <h1>HEALTH MATRIX</h1>
+        </div>
+        <nav class="nav-group">
+          <a class="nav-link" data-page="dashboard" href="index.html"><span class="icon">DB</span>Dashboard</a>
+          <a class="nav-link" data-page="risk" href="risk.html"><span class="icon">RS</span>Risk Assessment</a>
+          <a class="nav-link" data-page="symptoms" href="symptoms.html"><span class="icon">SY</span>Symptom Checker</a>
+          <a class="nav-link" data-page="tracker" href="tracker.html"><span class="icon">VT</span>Vitals Tracker</a>
+          <a class="nav-link" data-page="care" href="care-plan.html"><span class="icon">CP</span>Care Plan</a>
+          <a class="nav-link" data-page="patient" href="patient-tracker.html"><span class="icon">PT</span>Patient Tracker</a>
+          <a class="nav-link" data-page="medication" href="medication-schedule.html"><span class="icon">MS</span>Medication Schedule</a>
+          <a class="nav-link" data-page="appointments" href="doctor-appointments.html"><span class="icon">DA</span>Doctor Appointments</a>
+          <a class="nav-link" data-page="diabetes" href="diabetes-tracker.html"><span class="icon">DT</span>Diabetes Tracker</a>
+          <a class="nav-link" data-page="education" href="education.html"><span class="icon">ED</span>Education Center</a>
+        </nav>
+
+        <div class="sidebar-foot">
+          Educational content only. Not clinical advice.
+        </div>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left">
+            <input id="globalSearch" class="search" type="search" placeholder="Search pages and tools" />
+          </div>
+          <div class="topbar-right">
+            <span class="chip" id="todayChip"></span>
+            <span class="chip">Learning</span>
+            <span class="avatar" aria-hidden="true"></span>
+          </div>
+        </header>
+
+        <main class="main">
+          <h2 class="page-title">Heart Health Education Center</h2>
+          <p class="page-subtitle">Explore prevention topics, challenge your knowledge, and review common myths.</p>
+
+          <div class="education-layout">
+            <section class="card">
+              <div class="card-head">
+                <h3>Learning Library</h3>
+                <div>
+                  <button class="btn btn-primary" type="button" data-filter="all">All</button>
+                  <button class="btn btn-soft" type="button" data-filter="risk">Risk</button>
+                  <button class="btn btn-soft" type="button" data-filter="nutrition">Nutrition</button>
+                  <button class="btn btn-soft" type="button" data-filter="exercise">Exercise</button>
+                  <button class="btn btn-soft" type="button" data-filter="emergency">Emergency</button>
+                </div>
+              </div>
+
+              <div class="resource-grid">
+                <article class="resource-card" data-topic="risk">
+                  <strong>Understanding blood pressure zones</strong>
+                  <div class="resource-meta">Topic: Risk</div>
+                  <div>Learn how stage 1 and stage 2 hypertension affect long-term cardiac risk.</div>
+                </article>
+                <article class="resource-card" data-topic="nutrition">
+                  <strong>DASH-style meal approach</strong>
+                  <div class="resource-meta">Topic: Nutrition</div>
+                  <div>Reduce sodium, add potassium-rich foods, and balance saturated fat intake.</div>
+                </article>
+                <article class="resource-card" data-topic="exercise">
+                  <strong>Zone-2 cardio for heart function</strong>
+                  <div class="resource-meta">Topic: Exercise</div>
+                  <div>Low to moderate intensity training improves endurance and blood pressure response.</div>
+                </article>
+                <article class="resource-card" data-topic="emergency">
+                  <strong>When chest pain is an emergency</strong>
+                  <div class="resource-meta">Topic: Emergency</div>
+                  <div>Persistent pressure, shortness of breath, and fainting are high-priority signs.</div>
+                </article>
+                <article class="resource-card" data-topic="risk">
+                  <strong>Lipid panel basics</strong>
+                  <div class="resource-meta">Topic: Risk</div>
+                  <div>LDL, HDL, and triglycerides together guide prevention strategy.</div>
+                </article>
+                <article class="resource-card" data-topic="exercise">
+                  <strong>Weekly movement plan template</strong>
+                  <div class="resource-meta">Topic: Exercise</div>
+                  <div>Blend walking, light strength, and recovery for cardiometabolic benefit.</div>
+                </article>
+              </div>
+            </section>
+
+            <section class="grid">
+              <article class="card">
+                <h3>Quick Quiz</h3>
+                <form id="quizForm" class="grid">
+                  <div class="quiz-question" data-answer="b">
+                    <strong>1) Which BP value usually indicates stage 2 hypertension?</strong>
+                    <div class="answer-list">
+                      <label><input type="radio" name="q1" value="a" /> 122/78</label>
+                      <label><input type="radio" name="q1" value="b" /> 142/92</label>
+                      <label><input type="radio" name="q1" value="c" /> 116/74</label>
+                    </div>
+                  </div>
+
+                  <div class="quiz-question" data-answer="c">
+                    <strong>2) Which symptom combination needs emergency response?</strong>
+                    <div class="answer-list">
+                      <label><input type="radio" name="q2" value="a" /> Mild fatigue after work</label>
+                      <label><input type="radio" name="q2" value="b" /> Brief palpitations while stressed</label>
+                      <label><input type="radio" name="q2" value="c" /> Chest pressure with shortness of breath</label>
+                    </div>
+                  </div>
+
+                  <div class="quiz-question" data-answer="a">
+                    <strong>3) Which habit best supports lower blood pressure?</strong>
+                    <div class="answer-list">
+                      <label><input type="radio" name="q3" value="a" /> Reducing sodium intake and regular walking</label>
+                      <label><input type="radio" name="q3" value="b" /> Skipping sleep for extra work</label>
+                      <label><input type="radio" name="q3" value="c" /> Smoking fewer cigarettes only on weekdays</label>
+                    </div>
+                  </div>
+
+                  <div class="quiz-question" data-answer="b">
+                    <strong>4) HDL is generally considered:</strong>
+                    <div class="answer-list">
+                      <label><input type="radio" name="q4" value="a" /> Harmful only</label>
+                      <label><input type="radio" name="q4" value="b" /> Protective when at healthy levels</label>
+                      <label><input type="radio" name="q4" value="c" /> Unrelated to heart risk</label>
+                    </div>
+                  </div>
+
+                  <button class="btn btn-primary" type="submit">Check Score</button>
+                </form>
+                <div id="quizResult" class="notice" style="margin-top: 10px;">Submit quiz to see your score.</div>
+              </article>
+
+              <article class="card">
+                <h3>Myth vs Fact</h3>
+                <div class="accordion">
+                  <div class="accordion-item">
+                    <button class="accordion-btn" type="button" data-target="fact1">Myth: Heart disease is only an older-age issue.</button>
+                    <div id="fact1" class="accordion-content hidden">Fact: Risk accumulates over time, but early prevention in younger adults significantly changes long-term outcomes.</div>
+                  </div>
+                  <div class="accordion-item">
+                    <button class="accordion-btn" type="button" data-target="fact2">Myth: If I exercise, diet does not matter.</button>
+                    <div id="fact2" class="accordion-content hidden">Fact: Exercise and nutrition work together; high sodium and saturated fat can still worsen blood pressure and lipids.</div>
+                  </div>
+                  <div class="accordion-item">
+                    <button class="accordion-btn" type="button" data-target="fact3">Myth: Chest pain always means a heart attack.</button>
+                    <div id="fact3" class="accordion-content hidden">Fact: Not all chest pain is cardiac, but pressure with breathlessness, sweating, or faintness needs immediate evaluation.</div>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/education.js"></script>
+  </body>
+</html>
+
+
+

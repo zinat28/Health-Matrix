@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Risk Assessment Logo</title>
+  <desc id="desc">Custom purple risk icon with a shield, pulse wave, and alert marker.</desc>
+  <defs>
+    <linearGradient id="frame" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4F2AB4"/>
+      <stop offset="100%" stop-color="#935AFA"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8D59F5"/>
+      <stop offset="100%" stop-color="#5A2ED1"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="18" y="18" width="220" height="220" rx="34" fill="#EEF0FF" stroke="#6C48D8" stroke-width="6"/>
+  <circle cx="128" cy="128" r="90" fill="#F8F7FF"/>
+  <circle cx="128" cy="128" r="76" fill="none" stroke="url(#frame)" stroke-width="10"/>
+
+  <path d="M128 76l42 16v32c0 28-17 49-42 62-25-13-42-34-42-62V92z" fill="url(#shield)"/>
+  <path d="M128 84l35 13v27c0 24-14 42-35 53-21-11-35-29-35-53V97z" fill="#F7F4FF" opacity="0.95"/>
+
+  <path d="M94 125h14l8-14 13 27 10-18h20" fill="none" stroke="#5A2ED1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <circle cx="160" cy="95" r="16" fill="url(#shield)"/>
+  <rect x="157" y="86" width="6" height="14" rx="3" fill="#FFFFFF"/>
+  <circle cx="160" cy="105" r="3.5" fill="#FFFFFF"/>
+</svg>

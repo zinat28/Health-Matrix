@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Doctor Appointments Icon</title>
+  <desc id="desc">Custom medical icon with calendar and appointment clock.</desc>
+  <defs>
+    <linearGradient id="frame" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4F2AB4"/>
+      <stop offset="100%" stop-color="#935AFA"/>
+    </linearGradient>
+    <linearGradient id="head" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8D59F5"/>
+      <stop offset="100%" stop-color="#5A2ED1"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="18" y="18" width="220" height="220" rx="34" fill="#EEF0FF" stroke="#6C48D8" stroke-width="6"/>
+  <circle cx="128" cy="128" r="90" fill="#F8F7FF"/>
+  <circle cx="128" cy="128" r="76" fill="none" stroke="url(#frame)" stroke-width="10"/>
+
+  <rect x="80" y="84" width="96" height="82" rx="12" fill="#FFFFFF" stroke="#5A2ED1" stroke-width="6"/>
+  <rect x="80" y="84" width="96" height="22" rx="12" fill="url(#head)"/>
+  <line x1="102" y1="74" x2="102" y2="94" stroke="#5A2ED1" stroke-width="6" stroke-linecap="round"/>
+  <line x1="154" y1="74" x2="154" y2="94" stroke="#5A2ED1" stroke-width="6" stroke-linecap="round"/>
+
+  <path d="M98 128h14m-7-7v14" stroke="#5A2ED1" stroke-width="6" stroke-linecap="round"/>
+  <rect x="120" y="118" width="40" height="8" rx="4" fill="#CFC1F8"/>
+  <rect x="92" y="142" width="68" height="8" rx="4" fill="#CFC1F8"/>
+
+  <circle cx="160" cy="160" r="18" fill="#FFFFFF" stroke="#5A2ED1" stroke-width="6"/>
+  <line x1="160" y1="160" x2="160" y2="150" stroke="#5A2ED1" stroke-width="5" stroke-linecap="round"/>
+  <line x1="160" y1="160" x2="168" y2="164" stroke="#5A2ED1" stroke-width="5" stroke-linecap="round"/>
+</svg>
+

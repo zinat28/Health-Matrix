@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEALTH MATRIX | Risk Assessment</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/risk.css" />
+  </head>
+  <body data-page="risk">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <h1>HEALTH MATRIX</h1>
+        </div>
+        <nav class="nav-group">
+          <a class="nav-link" data-page="dashboard" href="index.html"><span class="icon">DB</span>Dashboard</a>
+          <a class="nav-link" data-page="risk" href="risk.html"><span class="icon">RS</span>Risk Assessment</a>
+          <a class="nav-link" data-page="symptoms" href="symptoms.html"><span class="icon">SY</span>Symptom Checker</a>
+          <a class="nav-link" data-page="tracker" href="tracker.html"><span class="icon">VT</span>Vitals Tracker</a>
+          <a class="nav-link" data-page="care" href="care-plan.html"><span class="icon">CP</span>Care Plan</a>
+          <a class="nav-link" data-page="patient" href="patient-tracker.html"><span class="icon">PT</span>Patient Tracker</a>
+          <a class="nav-link" data-page="medication" href="medication-schedule.html"><span class="icon">MS</span>Medication Schedule</a>
+          <a class="nav-link" data-page="appointments" href="doctor-appointments.html"><span class="icon">DA</span>Doctor Appointments</a>
+          <a class="nav-link" data-page="diabetes" href="diabetes-tracker.html"><span class="icon">DT</span>Diabetes Tracker</a>
+          <a class="nav-link" data-page="education" href="education.html"><span class="icon">ED</span>Education Center</a>
+        </nav>
+
+        <div class="sidebar-foot">
+          Risk model is a frontend educational heuristic only.<br />
+          Not a validated medical calculator.
+        </div>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left">
+            <input id="globalSearch" class="search" type="search" placeholder="Search pages and tools" />
+          </div>
+          <div class="topbar-right">
+            <span class="chip" id="todayChip"></span>
+            <span class="chip" id="lastSavedRisk">No prior saved result</span>
+            <span class="avatar" aria-hidden="true"></span>
+          </div>
+        </header>
+
+        <main class="main">
+          <h2 class="page-title">Heart Disease Risk Assessment</h2>
+          <p class="page-subtitle">Enter profile and clinical indicators to estimate current risk tier.</p>
+
+          <div class="risk-layout">
+            <section class="card">
+              <h3>Assessment Inputs</h3>
+              <form id="riskForm" class="form-grid" autocomplete="off">
+                <div>
+                  <label class="label" for="age">Age</label>
+                  <input class="input" id="age" name="age" type="number" min="18" max="100" value="45" required />
+                </div>
+                <div>
+                  <label class="label" for="sex">Sex</label>
+                  <select class="select" id="sex" name="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="label" for="smoker">Current Smoker</label>
+                  <select class="select" id="smoker" name="smoker">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="label" for="diabetes">Diabetes</label>
+                  <select class="select" id="diabetes" name="diabetes">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="label" for="familyHistory">Family History (early heart disease)</label>
+                  <select class="select" id="familyHistory" name="familyHistory">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="label" for="activity">Weekly Activity</label>
+                  <select class="select" id="activity" name="activity">
+                    <option value="high">High (5+ days/week)</option>
+                    <option value="moderate">Moderate (2-4 days/week)</option>
+                    <option value="low">Low (0-1 day/week)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="label" for="sys">Systolic BP (mmHg)</label>
+                  <input class="input" id="sys" name="sys" type="number" min="80" max="240" value="132" required />
+                </div>
+                <div>
+                  <label class="label" for="ldl">LDL Cholesterol (mg/dL)</label>
+                  <input class="input" id="ldl" name="ldl" type="number" min="40" max="300" value="145" required />
+                </div>
+
+                <div>
+                  <label class="label" for="hdl">HDL Cholesterol (mg/dL)</label>
+                  <input class="input" id="hdl" name="hdl" type="number" min="20" max="120" value="48" required />
+                </div>
+                <div>
+                  <label class="label" for="bmi">BMI</label>
+                  <input class="input" id="bmi" name="bmi" type="number" min="15" max="60" step="0.1" value="27.4" required />
+                </div>
+
+                <div class="form-actions" style="grid-column: 1 / -1;">
+                  <button class="btn btn-primary" type="submit">Calculate Risk</button>
+                  <a class="btn btn-soft" href="tracker.html">Open Vitals Tracker</a>
+                </div>
+              </form>
+            </section>
+
+            <aside class="risk-result">
+              <div class="card-head">
+                <h3>Result</h3>
+                <span id="riskLevel" class="status good">Low risk</span>
+              </div>
+              <div id="riskScore" class="risk-score">0</div>
+              <div class="legend">Composite score (0-40)</div>
+
+              <div class="risk-meter" aria-hidden="true">
+                <span id="riskMarker" class="risk-marker"></span>
+              </div>
+
+              <div id="riskSummary" class="result-block">Current profile appears favorable. Continue prevention-focused habits.</div>
+
+              <div class="result-block">
+                <strong>Recommended Next Steps</strong>
+                <ul id="riskRecommendations" class="recommendations"></ul>
+              </div>
+
+              <div class="result-block">
+                <strong>Main Contributing Factors</strong>
+                <div id="riskFactors" class="factor-grid"></div>
+              </div>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/risk.js"></script>
+  </body>
+</html>
+
+
+

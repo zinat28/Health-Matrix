@@ -1,0 +1,46 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heartFill" x1="0.2" y1="0.05" x2="0.8" y2="0.95">
+      <stop offset="0%" stop-color="#ff4a4a" />
+      <stop offset="100%" stop-color="#dd0f2f" />
+    </linearGradient>
+    <linearGradient id="handFill" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0%" stop-color="#ffd0b0" />
+      <stop offset="100%" stop-color="#f2b182" />
+    </linearGradient>
+    <linearGradient id="cuffFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2f84ff" />
+      <stop offset="100%" stop-color="#1461e8" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(64 64)">
+    <path
+      d="M0-44c8-12 28-10 31 7 2 11-3 18-13 27L0 7l-18-17C-28-19-33-26-31-37c3-17 23-19 31-7z"
+      fill="url(#heartFill)"
+      stroke="#1f1f1f"
+      stroke-width="3"
+      stroke-linejoin="round"
+    />
+    <rect x="-8" y="-24" width="16" height="16" rx="2" fill="#0a0a0a" />
+    <rect x="-3" y="-29" width="6" height="26" rx="2" fill="#0a0a0a" />
+
+    <path
+      d="M-40-6c-5 1-8 6-7 11l8 20c2 5 7 8 12 8h14c4 0 7-4 5-8l-8-15c-1-2-1-4 0-6 2-3 1-7-2-9-3-2-7-2-10 1l-6 6-6-8z"
+      fill="url(#handFill)"
+      stroke="#1f1f1f"
+      stroke-width="3"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M40-6c5 1 8 6 7 11l-8 20c-2 5-7 8-12 8H13c-4 0-7-4-5-8l8-15c1-2 1-4 0-6-2-3-1-7 2-9 3-2 7-2 10 1l6 6 6-8z"
+      fill="url(#handFill)"
+      stroke="#1f1f1f"
+      stroke-width="3"
+      stroke-linejoin="round"
+    />
+
+    <rect x="-37" y="33" width="17" height="12" rx="2" fill="url(#cuffFill)" stroke="#1f1f1f" stroke-width="3" />
+    <rect x="20" y="33" width="17" height="12" rx="2" fill="url(#cuffFill)" stroke="#1f1f1f" stroke-width="3" />
+  </g>
+</svg>

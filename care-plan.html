@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEALTH MATRIX | Care Plan</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/care.css" />
+  </head>
+  <body data-page="care">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <h1>HEALTH MATRIX</h1>
+        </div>
+
+        <nav class="nav-group">
+          <a class="nav-link" data-page="dashboard" href="index.html"><span class="icon">DB</span>Dashboard</a>
+          <a class="nav-link" data-page="risk" href="risk.html"><span class="icon">RS</span>Risk Assessment</a>
+          <a class="nav-link" data-page="symptoms" href="symptoms.html"><span class="icon">SY</span>Symptom Checker</a>
+          <a class="nav-link" data-page="tracker" href="tracker.html"><span class="icon">VT</span>Vitals Tracker</a>
+          <a class="nav-link" data-page="care" href="care-plan.html"><span class="icon">CP</span>Care Plan</a>
+          <a class="nav-link" data-page="patient" href="patient-tracker.html"><span class="icon">PT</span>Patient Tracker</a>
+          <a class="nav-link" data-page="medication" href="medication-schedule.html"><span class="icon">MS</span>Medication Schedule</a>
+          <a class="nav-link" data-page="appointments" href="doctor-appointments.html"><span class="icon">DA</span>Doctor Appointments</a>
+          <a class="nav-link" data-page="diabetes" href="diabetes-tracker.html"><span class="icon">DT</span>Diabetes Tracker</a>
+          <a class="nav-link" data-page="education" href="education.html"><span class="icon">ED</span>Education Center</a>
+        </nav>
+
+        <div class="sidebar-foot">
+          Build adherence routines for medications and follow-ups.
+        </div>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left">
+            <input id="globalSearch" class="search" type="search" placeholder="Search pages and tools" />
+          </div>
+          <div class="topbar-right">
+            <span class="chip" id="todayChip"></span>
+            <span class="chip">Adherence</span>
+            <span class="avatar" aria-hidden="true"></span>
+          </div>
+        </header>
+
+        <main class="main">
+          <h2 class="page-title">Care Plan & Habits</h2>
+          <p class="page-subtitle">Track daily heart habits and use the sidebar for Patient Tracker, Medication Schedule, Doctor Appointments, and Diabetes Tracker.</p>
+
+          <div class="care-layout">
+            <section class="grid">
+              <article class="card">
+                <h3>Daily Heart Habits</h3>
+                <div class="progress" style="margin-top: 8px;">
+                  <div id="habitProgress" class="progress-fill"></div>
+                </div>
+                <p class="legend" id="habitProgressText">0/0 habits complete</p>
+
+                <div class="habit-grid">
+                  <div class="habit-item">
+                    <label><input data-habit="bp_check" type="checkbox" /> Morning BP check</label>
+                    <span class="legend">2 min</span>
+                  </div>
+                  <div class="habit-item">
+                    <label><input data-habit="walk_30" type="checkbox" /> Walk 30 minutes</label>
+                    <span class="legend">30 min</span>
+                  </div>
+                  <div class="habit-item">
+                    <label><input data-habit="low_sodium" type="checkbox" /> Low-sodium meal choice</label>
+                    <span class="legend">Meal</span>
+                  </div>
+                  <div class="habit-item">
+                    <label><input data-habit="sleep_7h" type="checkbox" /> Sleep 7+ hours target</label>
+                    <span class="legend">Night</span>
+                  </div>
+                  <div class="habit-item">
+                    <label><input data-habit="no_smoke" type="checkbox" /> No smoking today</label>
+                    <span class="legend">All day</span>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+            <section class="grid">
+              <article class="card">
+                <h4>How to Use This Page</h4>
+                <ul class="recommendations">
+                  <li>Update your daily habits throughout the day to keep adherence visible.</li>
+                  <li>Use Patient Tracker to manage profiles and notes.</li>
+                  <li>Use Medication Schedule for reminders and taken status.</li>
+                  <li>Use Doctor Appointments for specialist visits and follow-ups.</li>
+                  <li>Use Diabetes Tracker to log readings and monitor range trends.</li>
+                  <li>Use Vitals Tracker and Risk Assessment weekly to monitor trend shifts.</li>
+                </ul>
+              </article>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/care.js"></script>
+  </body>
+</html>

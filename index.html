@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEALTH MATRIX | Dashboard</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <h1>HEALTH MATRIX</h1>
+        </div>
+        <nav class="nav-group">
+          <a class="nav-link" data-page="dashboard" href="index.html"><span class="icon">DB</span>Dashboard</a>
+          <a class="nav-link" data-page="risk" href="risk.html"><span class="icon">RS</span>Risk Assessment</a>
+          <a class="nav-link" data-page="symptoms" href="symptoms.html"><span class="icon">SY</span>Symptom Checker</a>
+          <a class="nav-link" data-page="tracker" href="tracker.html"><span class="icon">VT</span>Vitals Tracker</a>
+          <a class="nav-link" data-page="care" href="care-plan.html"><span class="icon">CP</span>Care Plan</a>
+          <a class="nav-link" data-page="patient" href="patient-tracker.html"><span class="icon">PT</span>Patient Tracker</a>
+          <a class="nav-link" data-page="medication" href="medication-schedule.html"><span class="icon">MS</span>Medication Schedule</a>
+          <a class="nav-link" data-page="appointments" href="doctor-appointments.html"><span class="icon">DA</span>Doctor Appointments</a>
+          <a class="nav-link" data-page="diabetes" href="diabetes-tracker.html"><span class="icon">DT</span>Diabetes Tracker</a>
+          <a class="nav-link" data-page="education" href="education.html"><span class="icon">ED</span>Education Center</a>
+        </nav>
+
+        <div class="sidebar-foot">
+          Frontend-only demo for heart disease management workflows.<br />
+          Data stays in your browser (localStorage).<br />
+          <span id="currentYear"></span>
+        </div>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left">
+            <input id="globalSearch" class="search" type="search" placeholder="Search: risk, symptoms, tracker, care, education" />
+          </div>
+          <div class="topbar-right">
+            <span class="chip" id="todayChip"></span>
+            <span class="chip">Premium Plan</span>
+            <span class="avatar" aria-hidden="true"></span>
+          </div>
+        </header>
+
+        <main class="main">
+          <h2 class="page-title">Overview Of Your Heart Health</h2>
+          <p class="page-subtitle">Interactive front-end dashboard synced with your local vitals and care tools.</p>
+
+          <div class="dashboard-grid">
+            <section class="grid">
+              <div class="metrics">
+                <article class="metric-card">
+                  <div class="metric-label">Resting Heart Rate</div>
+                  <div class="value" id="statHr">98</div>
+                  <div class="metric-foot">Latest resting bpm from tracker</div>
+                </article>
+
+                <article class="metric-card">
+                  <div class="metric-label">Blood Pressure</div>
+                  <div class="value" id="statBp">132/84</div>
+                  <div class="metric-foot">Latest systolic / diastolic</div>
+                </article>
+
+                <article class="metric-card">
+                  <div class="metric-label">Oxygen & Steps</div>
+                  <div class="value"><span id="statOxygen">97%</span> / <span id="statActivity">4,800</span></div>
+                  <div class="metric-foot">SpO2 and today activity logs</div>
+                </article>
+              </div>
+
+              <article class="card">
+                <div class="card-head">
+                  <h3>Real-time Risk Simulator</h3>
+                  <span id="simRiskBadge" class="status good">Stable</span>
+                </div>
+                <p class="muted">Adjust simulated values to understand short-term risk sensitivity.</p>
+
+                <div class="sim-form">
+                  <div class="slider-wrap">
+                    <label class="label" for="simHr">Resting HR</label>
+                    <input id="simHr" type="range" min="50" max="130" value="98" />
+                    <div class="legend" id="simHrValue">98 bpm</div>
+                  </div>
+
+                  <div class="slider-wrap">
+                    <label class="label" for="simSys">Systolic BP</label>
+                    <input id="simSys" type="range" min="95" max="190" value="132" />
+                    <div class="legend" id="simSysValue">132 mmHg</div>
+                  </div>
+                </div>
+
+                <div class="notice" id="simRiskText">Continue current routine and log tonight's readings.</div>
+
+                <div class="chart-box">
+                  <div class="card-head">
+                    <strong>Pulse Trend Preview</strong>
+                    <span class="legend">Simulated bars</span>
+                  </div>
+                  <div id="trendBars" class="chart-bars"></div>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-head">
+                  <h3>Today Actions</h3>
+                  <a href="care-plan.html" class="btn btn-soft">Open Care Plan</a>
+                </div>
+                <div class="quick-list">
+                  <div class="quick-item">Complete morning blood pressure reading.</div>
+                  <div class="quick-item">Walk at least 30 minutes in zone-2 intensity.</div>
+                  <div class="quick-item">Use Symptom Checker if chest discomfort appears.</div>
+                </div>
+                <p class="legend" id="latestStamp">Latest tracker sync: no data yet</p>
+              </article>
+            </section>
+
+            <aside class="heart-panel">
+              <div class="card-head">
+                <h3>Your Heart Statistic</h3>
+                <a class="btn btn-soft" href="risk.html">Run Full Risk Check</a>
+              </div>
+
+              <div class="heart-circle">
+                <div class="heart-placeholder">
+                  <img class="heart-anatomy" src="style/heartt.jpg" alt="Heart illustration" />
+                  <div class="heart-pill heart-pill-left">
+                    <div class="heart-pill-label">HRV</div>
+                    <div class="heart-pill-value">84 ms</div>
+                    <div class="heart-pill-status">Stable</div>
+                  </div>
+                  <div class="heart-pill heart-pill-right">
+                    <div class="heart-pill-label">Cholesterol</div>
+                    <div class="heart-pill-value">166 mg/dL</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bpm-grid">
+                <article class="bpm-item">
+                  <div class="legend">Average</div>
+                  <div class="value">98</div>
+                  <div class="legend">bpm</div>
+                </article>
+
+                <article class="bpm-item">
+                  <div class="legend">Minimum</div>
+                  <div class="value">48</div>
+                  <div class="legend">bpm</div>
+                </article>
+
+                <article class="bpm-item">
+                  <div class="legend">Maximum</div>
+                  <div class="value">118</div>
+                  <div class="legend">bpm</div>
+                </article>
+              </div>
+
+              <div class="notice" style="margin-top: 10px;">
+                This dashboard is informational only and does not replace medical diagnosis.
+              </div>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
+
+
+
+

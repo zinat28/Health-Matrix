@@ -1,0 +1,78 @@
+.symptom-layout {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 14px;
+}
+
+.check-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.check-item {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+}
+
+.check-item input {
+  margin-top: 2px;
+}
+
+.check-item strong {
+  display: block;
+  font-size: 13px;
+}
+
+.check-item span {
+  color: #6f768a;
+  font-size: 12px;
+}
+
+.urgency-box {
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 12px;
+}
+
+.urgency-level {
+  margin-top: 8px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.urgency-actions {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.log-list {
+  margin-top: 10px;
+  max-height: 280px;
+  overflow: auto;
+}
+
+.timer {
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+@media (max-width: 1080px) {
+  .symptom-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .check-grid {
+    grid-template-columns: 1fr;
+  }
+}

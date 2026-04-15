@@ -1,0 +1,217 @@
+.dashboard-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 14px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.metric-card {
+  background: #f7f8ff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.metric-label {
+  color: #535a6f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.metric-foot {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #7a8195;
+}
+
+.heart-panel {
+  background: #f7f8ff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.heart-circle {
+  margin: 14px auto;
+  width: min(340px, 100%);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #fafbff 0 52%, transparent 53%),
+    radial-gradient(circle at center, #f1f3fb 0 74%, #f9f9fd 75%);
+  display: grid;
+  place-items: center;
+}
+
+.heart-placeholder {
+  width: min(290px, 92%);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  text-align: center;
+}
+
+.heart-anatomy {
+  width: min(250px, 100%);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: drop-shadow(0 22px 26px rgba(130, 20, 48, 0.26));
+}
+
+.heart-pill {
+  position: absolute;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #ffffffd9;
+  box-shadow: 0 14px 28px rgba(35, 42, 78, 0.15);
+  backdrop-filter: blur(2px);
+  padding: 8px 10px;
+  text-align: left;
+  color: #2b3042;
+}
+
+.heart-pill-left {
+  left: -18px;
+  bottom: 44px;
+  min-width: 88px;
+  background: linear-gradient(145deg, #4f86ff 0%, #3672ee 100%);
+  border-color: #3370ec;
+  color: #fff;
+}
+
+.heart-pill-right {
+  right: -38px;
+  bottom: 20px;
+  min-width: 132px;
+}
+
+.heart-pill-label {
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.heart-pill-value {
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.heart-pill-status {
+  margin-top: 4px;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff33;
+}
+
+@media (max-width: 480px) {
+  .heart-pill-right {
+    right: -8px;
+  }
+
+  .heart-pill-left {
+    left: -8px;
+  }
+}
+
+.bpm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.bpm-item {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.bpm-item .value {
+  font-size: clamp(22px, 3vw, 34px);
+}
+
+.sim-form {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.slider-wrap {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.slider-wrap input {
+  width: 100%;
+}
+
+.chart-box {
+  margin-top: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.chart-bars {
+  height: 120px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: end;
+  gap: 6px;
+}
+
+.chart-bar {
+  border-radius: 999px;
+  background: #dce0f2;
+}
+
+.chart-bar.accent {
+  background: linear-gradient(180deg, #8a4df0, #6228db);
+}
+
+.quick-list {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.quick-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  background: #fff;
+}
+
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .sim-form {
+    grid-template-columns: 1fr;
+  }
+
+  .bpm-grid {
+    grid-template-columns: 1fr;
+  }
+}

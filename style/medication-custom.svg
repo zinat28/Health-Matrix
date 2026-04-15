@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Medication Schedule Icon</title>
+  <desc id="desc">Custom medical icon with capsule and dosing clock.</desc>
+  <defs>
+    <linearGradient id="frame" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4F2AB4"/>
+      <stop offset="100%" stop-color="#935AFA"/>
+    </linearGradient>
+    <linearGradient id="pill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8D59F5"/>
+      <stop offset="100%" stop-color="#5A2ED1"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="18" y="18" width="220" height="220" rx="34" fill="#EEF0FF" stroke="#6C48D8" stroke-width="6"/>
+  <circle cx="128" cy="128" r="90" fill="#F8F7FF"/>
+  <circle cx="128" cy="128" r="76" fill="none" stroke="url(#frame)" stroke-width="10"/>
+
+  <g transform="translate(128 115) rotate(-35) translate(-128 -115)">
+    <rect x="86" y="95" width="84" height="40" rx="20" fill="#FFFFFF" stroke="#5A2ED1" stroke-width="6"/>
+    <path d="M128 95h22c11 0 20 9 20 20s-9 20-20 20h-22z" fill="url(#pill)"/>
+    <rect x="103" y="112" width="50" height="6" rx="3" fill="#FFFFFF" opacity="0.92"/>
+  </g>
+
+  <circle cx="129" cy="160" r="25" fill="#FFFFFF" stroke="#5A2ED1" stroke-width="6"/>
+  <line x1="129" y1="160" x2="129" y2="146" stroke="#5A2ED1" stroke-width="6" stroke-linecap="round"/>
+  <line x1="129" y1="160" x2="140" y2="166" stroke="#5A2ED1" stroke-width="6" stroke-linecap="round"/>
+</svg>
+

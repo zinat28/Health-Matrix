@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Patient Tracker Icon</title>
+  <desc id="desc">Custom medical icon with person silhouette inside magnifier.</desc>
+  <defs>
+    <linearGradient id="frame" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4F2AB4"/>
+      <stop offset="100%" stop-color="#935AFA"/>
+    </linearGradient>
+    <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8D59F5"/>
+      <stop offset="100%" stop-color="#5A2ED1"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="18" y="18" width="220" height="220" rx="34" fill="#EEF0FF" stroke="#6C48D8" stroke-width="6"/>
+  <circle cx="128" cy="128" r="90" fill="#F8F7FF"/>
+  <circle cx="128" cy="128" r="76" fill="none" stroke="url(#frame)" stroke-width="10"/>
+
+  <circle cx="117" cy="118" r="42" fill="none" stroke="#5A2ED1" stroke-width="8"/>
+  <rect x="143" y="142" width="42" height="15" rx="7.5" transform="rotate(45 143 142)" fill="url(#lens)"/>
+
+  <circle cx="117" cy="104" r="12" fill="url(#lens)"/>
+  <path d="M93 132c5-12 13-18 24-18s19 6 24 18" fill="url(#lens)"/>
+
+  <circle cx="88" cy="96" r="5" fill="#50B7C5"/>
+  <circle cx="146" cy="100" r="5" fill="#F0748E"/>
+  <circle cx="92" cy="138" r="5" fill="#8A63F4"/>
+  <circle cx="140" cy="136" r="5" fill="#F2B064"/>
+</svg>
+

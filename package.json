@@ -1,0 +1,11 @@
+{
+  "name": "health-matrix",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HealthPulse app with backend auth and SQLite persistence",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js",
+    "build": "node -e \"console.log('No frontend build step required for this static site.')\""
+  }
+}

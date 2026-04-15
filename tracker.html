@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEALTH MATRIX | Vitals Tracker</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/tracker.css" />
+  </head>
+  <body data-page="tracker">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <h1>HEALTH MATRIX</h1>
+        </div>
+        <nav class="nav-group">
+          <a class="nav-link" data-page="dashboard" href="index.html"><span class="icon">DB</span>Dashboard</a>
+          <a class="nav-link" data-page="risk" href="risk.html"><span class="icon">RS</span>Risk Assessment</a>
+          <a class="nav-link" data-page="symptoms" href="symptoms.html"><span class="icon">SY</span>Symptom Checker</a>
+          <a class="nav-link" data-page="tracker" href="tracker.html"><span class="icon">VT</span>Vitals Tracker</a>
+          <a class="nav-link" data-page="care" href="care-plan.html"><span class="icon">CP</span>Care Plan</a>
+          <a class="nav-link" data-page="patient" href="patient-tracker.html"><span class="icon">PT</span>Patient Tracker</a>
+          <a class="nav-link" data-page="medication" href="medication-schedule.html"><span class="icon">MS</span>Medication Schedule</a>
+          <a class="nav-link" data-page="appointments" href="doctor-appointments.html"><span class="icon">DA</span>Doctor Appointments</a>
+          <a class="nav-link" data-page="diabetes" href="diabetes-tracker.html"><span class="icon">DT</span>Diabetes Tracker</a>
+          <a class="nav-link" data-page="education" href="education.html"><span class="icon">ED</span>Education Center</a>
+        </nav>
+
+        <div class="sidebar-foot">
+          Vitals are saved to your account in the backend database.
+        </div>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left">
+            <input id="globalSearch" class="search" type="search" placeholder="Search pages and tools" />
+          </div>
+          <div class="topbar-right">
+            <span class="chip" id="todayChip"></span>
+            <span class="chip">Trend View</span>
+            <span class="avatar" aria-hidden="true"></span>
+          </div>
+        </header>
+
+        <main class="main">
+          <h2 class="page-title">Vitals Tracker</h2>
+          <p class="page-subtitle">Track heart metrics over time and review trend lines.</p>
+
+          <div class="tracker-layout">
+            <section class="card">
+              <h3>Add Vital Entry</h3>
+              <form id="vitalForm" class="form-grid">
+                <div>
+                  <label class="label" for="timestamp">Date & Time</label>
+                  <input class="input" id="timestamp" name="timestamp" type="datetime-local" required />
+                </div>
+                <div>
+                  <label class="label" for="hr">Resting Heart Rate (bpm)</label>
+                  <input class="input" id="hr" name="hr" type="number" min="30" max="220" value="80" required />
+                </div>
+
+                <div>
+                  <label class="label" for="sys">Systolic BP</label>
+                  <input class="input" id="sys" name="sys" type="number" min="70" max="260" value="125" required />
+                </div>
+                <div>
+                  <label class="label" for="dia">Diastolic BP</label>
+                  <input class="input" id="dia" name="dia" type="number" min="40" max="180" value="82" required />
+                </div>
+
+                <div>
+                  <label class="label" for="oxygen">Oxygen Saturation (%)</label>
+                  <input class="input" id="oxygen" name="oxygen" type="number" min="70" max="100" value="97" required />
+                </div>
+                <div>
+                  <label class="label" for="glucose">Glucose (mg/dL, optional)</label>
+                  <input class="input" id="glucose" name="glucose" type="number" min="40" max="400" />
+                </div>
+
+                <div>
+                  <label class="label" for="steps">Daily Steps</label>
+                  <input class="input" id="steps" name="steps" type="number" min="0" max="50000" value="4500" required />
+                </div>
+                <div>
+                  <label class="label" for="notes">Notes</label>
+                  <input class="input" id="notes" name="notes" type="text" placeholder="After walk, before medication, etc." />
+                </div>
+
+                <div class="form-actions" style="grid-column: 1 / -1;">
+                  <button class="btn btn-primary" type="submit">Add Entry</button>
+                  <button class="btn btn-soft" type="button" id="clearVitals">Clear All</button>
+                  <button class="btn btn-soft" type="button" id="exportVitals">Export JSON</button>
+                </div>
+              </form>
+            </section>
+
+            <aside class="grid">
+              <article class="card">
+                <h4>Summary</h4>
+                <div class="summary-grid">
+                  <div class="summary-item">
+                    <div class="legend">Average HR</div>
+                    <div class="value" id="avgHr">--</div>
+                  </div>
+                  <div class="summary-item">
+                    <div class="legend">Average BP</div>
+                    <div class="value" id="avgBp">--/--</div>
+                  </div>
+                  <div class="summary-item">
+                    <div class="legend">Average SpO2</div>
+                    <div class="value" id="avgOxygen">--%</div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-head">
+                  <h4>Trend Chart (Last 12 Entries)</h4>
+                  <span class="legend">HR + systolic BP</span>
+                </div>
+                <div class="canvas-wrap">
+                  <canvas id="vitalsChart"></canvas>
+                </div>
+              </article>
+            </aside>
+          </div>
+
+          <section class="card" style="margin-top: 14px;">
+            <div class="card-head">
+              <h3>Vitals History</h3>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>HR</th>
+                    <th>BP</th>
+                    <th>SpO2</th>
+                    <th>Steps</th>
+                    <th>Glucose</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody id="vitalRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/tracker.js"></script>
+  </body>
+</html>
+
+
+
+

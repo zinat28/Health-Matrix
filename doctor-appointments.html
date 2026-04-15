@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEALTH MATRIX | Doctor Appointments</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/care.css" />
+  </head>
+  <body data-page="appointments">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <h1>HEALTH MATRIX</h1>
+        </div>
+
+        <nav class="nav-group">
+          <a class="nav-link" data-page="dashboard" href="index.html"><span class="icon">DB</span>Dashboard</a>
+          <a class="nav-link" data-page="risk" href="risk.html"><span class="icon">RS</span>Risk Assessment</a>
+          <a class="nav-link" data-page="symptoms" href="symptoms.html"><span class="icon">SY</span>Symptom Checker</a>
+          <a class="nav-link" data-page="tracker" href="tracker.html"><span class="icon">VT</span>Vitals Tracker</a>
+          <a class="nav-link" data-page="care" href="care-plan.html"><span class="icon">CP</span>Care Plan</a>
+          <a class="nav-link" data-page="patient" href="patient-tracker.html"><span class="icon">PT</span>Patient Tracker</a>
+          <a class="nav-link" data-page="medication" href="medication-schedule.html"><span class="icon">MS</span>Medication Schedule</a>
+          <a class="nav-link" data-page="appointments" href="doctor-appointments.html"><span class="icon">DA</span>Doctor Appointments</a>
+          <a class="nav-link" data-page="diabetes" href="diabetes-tracker.html"><span class="icon">DT</span>Diabetes Tracker</a>
+          <a class="nav-link" data-page="education" href="education.html"><span class="icon">ED</span>Education Center</a>
+        </nav>
+
+        <div class="sidebar-foot">
+          Build adherence routines for medications and follow-ups.
+        </div>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left">
+            <input id="globalSearch" class="search" type="search" placeholder="Search pages and tools" />
+          </div>
+          <div class="topbar-right">
+            <span class="chip" id="todayChip"></span>
+            <span class="chip">Appointments</span>
+            <span class="avatar" aria-hidden="true"></span>
+          </div>
+        </header>
+
+        <main class="main">
+          <h2 class="page-title">Doctor Appointments</h2>
+          <p class="page-subtitle">Schedule specialist visits and keep follow-up timelines visible.</p>
+
+          <div class="care-layout" style="grid-template-columns: 1fr;">
+            <section class="grid">
+              <article class="card">
+                <h3>Doctor Appointments</h3>
+                <form id="appointmentForm" class="form-grid">
+                  <div>
+                    <label class="label" for="title">Purpose</label>
+                    <input class="input" id="title" name="title" type="text" placeholder="Cardiology follow-up" required />
+                  </div>
+                  <div>
+                    <label class="label" for="doctor">Doctor / Clinic</label>
+                    <input class="input" id="doctor" name="doctor" type="text" required />
+                  </div>
+                  <div>
+                    <label class="label" for="appointmentSpecialty">Specialty</label>
+                    <select class="select" id="appointmentSpecialty" name="appointmentSpecialty">
+                      <option>Cardiology</option>
+                      <option>Endocrinology</option>
+                      <option>General Medicine</option>
+                      <option>Diabetes Educator</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="label" for="date">Date & Time</label>
+                    <input class="input" id="date" name="date" type="datetime-local" required />
+                  </div>
+                  <div>
+                    <label class="label" for="type">Type</label>
+                    <select class="select" id="type" name="type">
+                      <option>In-person</option>
+                      <option>Telehealth</option>
+                      <option>Lab visit</option>
+                    </select>
+                  </div>
+
+                  <div class="form-actions" style="grid-column: 1 / -1;">
+                    <button class="btn btn-primary" type="submit">Add Appointment</button>
+                  </div>
+                </form>
+
+                <div id="appointmentList" class="list" style="margin-top: 10px;"></div>
+              </article>
+            </section>
+
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/care.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEALTH MATRIX | Diabetes Tracker</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/care.css" />
+  </head>
+  <body data-page="diabetes">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <h1>HEALTH MATRIX</h1>
+        </div>
+
+        <nav class="nav-group">
+          <a class="nav-link" data-page="dashboard" href="index.html"><span class="icon">DB</span>Dashboard</a>
+          <a class="nav-link" data-page="risk" href="risk.html"><span class="icon">RS</span>Risk Assessment</a>
+          <a class="nav-link" data-page="symptoms" href="symptoms.html"><span class="icon">SY</span>Symptom Checker</a>
+          <a class="nav-link" data-page="tracker" href="tracker.html"><span class="icon">VT</span>Vitals Tracker</a>
+          <a class="nav-link" data-page="care" href="care-plan.html"><span class="icon">CP</span>Care Plan</a>
+          <a class="nav-link" data-page="patient" href="patient-tracker.html"><span class="icon">PT</span>Patient Tracker</a>
+          <a class="nav-link" data-page="medication" href="medication-schedule.html"><span class="icon">MS</span>Medication Schedule</a>
+          <a class="nav-link" data-page="appointments" href="doctor-appointments.html"><span class="icon">DA</span>Doctor Appointments</a>
+          <a class="nav-link" data-page="diabetes" href="diabetes-tracker.html"><span class="icon">DT</span>Diabetes Tracker</a>
+          <a class="nav-link" data-page="education" href="education.html"><span class="icon">ED</span>Education Center</a>
+        </nav>
+
+        <div class="sidebar-foot">
+          Build adherence routines for medications and follow-ups.
+        </div>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left">
+            <input id="globalSearch" class="search" type="search" placeholder="Search pages and tools" />
+          </div>
+          <div class="topbar-right">
+            <span class="chip" id="todayChip"></span>
+            <span class="chip">Glucose</span>
+            <span class="avatar" aria-hidden="true"></span>
+          </div>
+        </header>
+
+        <main class="main">
+          <h2 class="page-title">Diabetes Tracker</h2>
+          <p class="page-subtitle">Log glucose readings, tag meal timing, and monitor in-range trends.</p>
+
+          <div class="care-layout" style="grid-template-columns: 1fr;">
+            <section class="grid">
+              <article class="card">
+                <h3>Diabetes Tracker</h3>
+                <form id="diabetesForm" class="form-grid">
+                  <div>
+                    <label class="label" for="diabetesPatient">Patient</label>
+                    <select class="select" id="diabetesPatient" name="diabetesPatient">
+                      <option value="">Unassigned</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="label" for="diabetesTimestamp">Reading Time</label>
+                    <input class="input" id="diabetesTimestamp" name="diabetesTimestamp" type="datetime-local" required />
+                  </div>
+                  <div>
+                    <label class="label" for="diabetesGlucose">Glucose (mg/dL)</label>
+                    <input class="input" id="diabetesGlucose" name="diabetesGlucose" type="number" min="30" max="700" required />
+                  </div>
+                  <div>
+                    <label class="label" for="diabetesMealTag">Reading Type</label>
+                    <select class="select" id="diabetesMealTag" name="diabetesMealTag">
+                      <option>Fasting</option>
+                      <option>Pre-meal</option>
+                      <option>Post-meal</option>
+                      <option>Bedtime</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="label" for="diabetesInsulin">Insulin Units (optional)</label>
+                    <input class="input" id="diabetesInsulin" name="diabetesInsulin" type="number" min="0" step="0.5" />
+                  </div>
+                  <div>
+                    <label class="label" for="diabetesNotes">Notes</label>
+                    <input class="input" id="diabetesNotes" name="diabetesNotes" type="text" placeholder="Meal, symptoms, medication timing..." />
+                  </div>
+                  <div class="form-actions" style="grid-column: 1 / -1;">
+                    <button class="btn btn-primary" type="submit">Add Reading</button>
+                  </div>
+                </form>
+
+                <div class="diabetes-stats">
+                  <div class="diabetes-stat">
+                    <div class="legend">Average</div>
+                    <div id="diabetesAvg" class="value">--</div>
+                  </div>
+                  <div class="diabetes-stat">
+                    <div class="legend">Latest</div>
+                    <div id="diabetesLatest" class="value">--</div>
+                  </div>
+                  <div class="diabetes-stat">
+                    <div class="legend">In Range (70-180)</div>
+                    <div id="diabetesRange" class="value">--</div>
+                  </div>
+                </div>
+
+                <div id="diabetesList" class="list" style="margin-top: 10px;"></div>
+              </article>
+            </section>
+
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/care.js"></script>
+  </body>
+</html>
+

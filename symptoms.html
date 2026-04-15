@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEALTH MATRIX | Symptom Checker</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/symptoms.css" />
+  </head>
+  <body data-page="symptoms">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <h1>HEALTH MATRIX</h1>
+        </div>
+        <nav class="nav-group">
+          <a class="nav-link" data-page="dashboard" href="index.html"><span class="icon">DB</span>Dashboard</a>
+          <a class="nav-link" data-page="risk" href="risk.html"><span class="icon">RS</span>Risk Assessment</a>
+          <a class="nav-link" data-page="symptoms" href="symptoms.html"><span class="icon">SY</span>Symptom Checker</a>
+          <a class="nav-link" data-page="tracker" href="tracker.html"><span class="icon">VT</span>Vitals Tracker</a>
+          <a class="nav-link" data-page="care" href="care-plan.html"><span class="icon">CP</span>Care Plan</a>
+          <a class="nav-link" data-page="patient" href="patient-tracker.html"><span class="icon">PT</span>Patient Tracker</a>
+          <a class="nav-link" data-page="medication" href="medication-schedule.html"><span class="icon">MS</span>Medication Schedule</a>
+          <a class="nav-link" data-page="appointments" href="doctor-appointments.html"><span class="icon">DA</span>Doctor Appointments</a>
+          <a class="nav-link" data-page="diabetes" href="diabetes-tracker.html"><span class="icon">DT</span>Diabetes Tracker</a>
+          <a class="nav-link" data-page="education" href="education.html"><span class="icon">ED</span>Education Center</a>
+        </nav>
+
+        <div class="sidebar-foot">
+          Emergency symptoms always require real clinical judgment.
+        </div>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left">
+            <input id="globalSearch" class="search" type="search" placeholder="Search pages and tools" />
+          </div>
+          <div class="topbar-right">
+            <span class="chip" id="todayChip"></span>
+            <span class="chip">Symptom Triage</span>
+            <span class="avatar" aria-hidden="true"></span>
+          </div>
+        </header>
+
+        <main class="main">
+          <h2 class="page-title">Cardiac Symptom Checker</h2>
+          <p class="page-subtitle">Select current symptoms for urgency guidance. For severe symptoms, call emergency services.</p>
+
+          <div class="symptom-layout">
+            <section class="card">
+              <h3>Current Symptoms</h3>
+
+              <form id="symptomForm">
+                <div class="check-grid">
+                  <label class="check-item"><input type="checkbox" name="symptom" value="chest_pressure" /><span><strong>Chest pressure or pain</strong><span>Heavy, squeezing, or persistent discomfort.</span></span></label>
+                  <label class="check-item"><input type="checkbox" name="symptom" value="radiating_pain" /><span><strong>Pain radiating to arm/jaw/back</strong><span>Could indicate ischemic pattern.</span></span></label>
+                  <label class="check-item"><input type="checkbox" name="symptom" value="short_breath" /><span><strong>Shortness of breath</strong><span>At rest or minimal effort.</span></span></label>
+                  <label class="check-item"><input type="checkbox" name="symptom" value="cold_sweat" /><span><strong>Cold sweat</strong><span>Unexpected clammy sweating.</span></span></label>
+                  <label class="check-item"><input type="checkbox" name="symptom" value="nausea" /><span><strong>Nausea</strong><span>With chest symptoms can be important.</span></span></label>
+                  <label class="check-item"><input type="checkbox" name="symptom" value="dizziness" /><span><strong>Dizziness</strong><span>Lightheaded or unstable feeling.</span></span></label>
+                  <label class="check-item"><input type="checkbox" name="symptom" value="fainting" /><span><strong>Fainting / near-fainting</strong><span>May reflect serious rhythm issues.</span></span></label>
+                  <label class="check-item"><input type="checkbox" name="symptom" value="palpitations" /><span><strong>Persistent palpitations</strong><span>Rapid or irregular rhythm episodes.</span></span></label>
+                  <label class="check-item"><input type="checkbox" name="symptom" value="leg_swelling" /><span><strong>Leg swelling</strong><span>Possible fluid overload signs.</span></span></label>
+                  <label class="check-item"><input type="checkbox" name="symptom" value="fatigue" /><span><strong>Unusual fatigue</strong><span>Lower-priority but relevant when persistent.</span></span></label>
+                </div>
+
+                <div class="form-grid" style="margin-top: 10px;">
+                  <div>
+                    <label class="label" for="duration">Duration</label>
+                    <select class="select" id="duration" name="duration">
+                      <option value="under_10">Under 10 minutes</option>
+                      <option value="over_20">Over 20 minutes</option>
+                      <option value="hours">Intermittent for hours</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="label" for="intensity">Intensity</label>
+                    <select class="select" id="intensity" name="intensity">
+                      <option value="mild">Mild</option>
+                      <option value="moderate">Moderate</option>
+                      <option value="severe">Severe</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button class="btn btn-primary" type="submit">Evaluate Urgency</button>
+                  <button class="btn btn-soft" type="button" id="saveSymptomEvent">Save Event</button>
+                  <button class="btn btn-soft" type="button" id="clearSymptomLog">Clear Log</button>
+                </div>
+              </form>
+            </section>
+
+            <aside class="grid">
+              <article class="urgency-box">
+                <div class="card-head">
+                  <h3>Urgency Result</h3>
+                  <span id="urgencyBadge" class="status good">Score 0</span>
+                </div>
+                <div id="urgencyLevel" class="urgency-level">Monitor</div>
+                <p id="urgencyGuidance" class="muted">Continue observing. Re-check if symptoms persist or worsen.</p>
+                <div class="urgency-actions">
+                  <a class="btn btn-soft" href="risk.html">Run Risk Assessment</a>
+                  <a class="btn btn-soft" href="tracker.html">Log Vitals</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-head">
+                  <h4>5-Minute Monitor</h4>
+                  <button id="startTimer" class="btn btn-soft" type="button">Start Timer</button>
+                </div>
+                <div id="monitorTimer" class="timer">00:00</div>
+                <p class="legend">Use this countdown to re-check symptom progression.</p>
+              </article>
+
+              <article class="card">
+                <div class="card-head">
+                  <h4>Symptom Event Log</h4>
+                </div>
+                <div id="symptomLog" class="log-list"></div>
+              </article>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/symptoms.js"></script>
+  </body>
+</html>
+
+
+
